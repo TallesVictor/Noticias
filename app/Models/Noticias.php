@@ -16,7 +16,7 @@ class Noticias extends Model
 
     public function index()
     {
-        return Noticias::all();
+         return Noticias::all();
     }
 
     public function show(int $id)
