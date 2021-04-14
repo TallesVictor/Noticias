@@ -15,7 +15,12 @@ class NoticiasController extends Controller
     public function index()
     {
         $noticias = new Noticias();
-        return $noticias->index();
+        $noticias = $noticias->index();
+        if (count($noticias)>0) {
+            return $noticias;
+        } else {
+            return response('Nenhuma Notícia encontrado', 500);
+        }
     }
 
     /**
@@ -48,12 +53,22 @@ class NoticiasController extends Controller
     public function show(int $id)
     {
         $noticias = new Noticias();
-        return $noticias->show($id);
+        $noticias = $noticias->show($id);
+        if (count($noticias)>0) {
+            return $noticias;
+        } else {
+            return response('Nenhuma Notícia encontrado', 500);
+        }
     }
 
     public function search(String $titulo)
     {
         $noticias = new Noticias();
-        return $noticias->search($titulo);
+        $noticias = $noticias->search($titulo);
+        if (count($noticias)>0) {
+            return $noticias;
+        } else {
+            return response('Nenhuma Notícia encontrado', 500);
+        }
     }
 }
