@@ -20,10 +20,16 @@ Route::get('/', function () {
     return view('home', ['noticias' => $noticiasController]);
 });
 
+Route::get('/noticia', function () {
+    $noticiasController = new NoticiasController();
+    $noticiasController = $noticiasController->index();
+    return $noticiasController;
+});
+
 Route::get('/noticia/{id}', function (int $id) {
     $noticiasController = new NoticiasController();
     $noticiasController = $noticiasController->show($id);
-    return view('home', ['noticias' => $noticiasController]);
+    return $noticiasController;
 });
 
 Route::get('/noticia/search/{titulo}', [NoticiasController::class, 'search']);
