@@ -1,3 +1,9 @@
+document.addEventListener('keypress', function(e) {
+    if (e.which == 13) {
+        $("#btnPesquisa").click();
+    }
+}, false);
+
 function loading() {
     $(".preloader").addClass('d-flex');
     $(".preloader").show()
