@@ -1,0 +1,9 @@
+.preloader {
+    position: absolute;
+    z-index: 2000;
+    background-color: #ffffff9f;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
