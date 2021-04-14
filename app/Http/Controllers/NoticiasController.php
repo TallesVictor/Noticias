@@ -28,9 +28,11 @@ class NoticiasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $noticias = new Noticias();
+        $noticias = $noticias->create($request);
+        return $noticias;
     }
 
     /**

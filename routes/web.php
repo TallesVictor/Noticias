@@ -19,7 +19,7 @@ Route::get('/', function () {
     $noticiasController = $noticiasController->index();
     return view('home', ['noticias' => $noticiasController]);
 });
-
+Route::post('/create', [NoticiasController::class, 'create']);
 Route::get('/noticia', function () {
     $noticiasController = new NoticiasController();
     $noticiasController = $noticiasController->index();
